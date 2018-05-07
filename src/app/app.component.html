@@ -1,1 +1,27 @@
-<div>Hola mundo, {{title}}, {{author}}</div>
+<!--<div>{{tsk.getTaskId()}}, {{tsk.getTaskTxt()}}, {{tsk.isTaskSelected()}} </div>-->
+
+<div>
+    <input type="checkbox" (change)="onSelectAllItems($event)">
+    <input type="text"
+            placeholder="{{defaultTaskText}}"  
+            (keyup.enter)="onCreateTask($event)"
+            (click)="onTxtEdit($event)">
+</div>
+
+<div *ngFor="let item of tasks">
+    <input type="checkbox" [checked]="item.isTaskSelected()" 
+    (change)=onSelectItem($event,item)>
+    <input type="text"
+            value="{{item.getTaskTxt()}}">
+    <input type="button" value="X" (click)="onDeleteTasks(item)">
+</div>
+
+<div *ngIf="tasksData.length > 0">
+        <span>{{tasksData.length}} items left</span>
+        <input type="button" value="All" (click)="onGetAllTasks()">
+        <input type="button" value="Active" (click)="onGetAllActiveTasks()">
+        <input type="button" value="Completed" (click)="onGetAllCompleteTasks()">
+        <span *ngIf="tasks.length > 0 && counterSelection > 0">
+            <input type="button" value="Clear completed" (click)="onClearCompleteTasks()">
+        </span>
+</div>
