@@ -25,7 +25,7 @@
         <input type="button" value="Active" (click)="onGetAllActiveTasks()">
         <input type="button" value="Completed" (click)="onGetAllCompleteTasks()">
         <span *ngIf="tasks.length > 0 && counterSelection > 0">
-            <input type="button" value="Clear completed" (click)="onClearCompleteTasks()">
+            <input type="button" value="Clear completed" (click)="onClearCompleteTasks()" class="right2">
         </span>
 </div>
 
