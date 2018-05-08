@@ -13,7 +13,8 @@ export class AppComponent {
   url = 'https://yesno.wtf/api';
 
   /*Creando y consumiendo servicios Nota: se completa la petición del
-  servicio en la template */
+  servicio en la template importante ver como se configura el servicio en
+  el app.module.ts*/
   constructor(private service: YesOrNoServiceService) {
     this.image$ = service.getResponse(this.url);
 }
