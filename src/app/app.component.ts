@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs/Observable';
+import { YesOrNoServiceService } from './services/yes-or-no-service.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'My application';
-  author = 'Jeisson Lopez';
+
+  image$: Observable<any>;
+  url = 'https://yesno.wtf/api';
+
+  /*Creando y consumiendo servicios Nota: se completa la petición del
+  servicio en la template */
+  constructor(private service: YesOrNoServiceService) {
+    this.image$ = service.getResponse(this.url);
+}
+
+
 }
