@@ -1,3 +1,38 @@
 div{
-    color: crimson;
+    border-color:blue;
+    border: solid;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-top-width: 0.5px;
+    border-bottom-width: 0.5px;
+    margin-top: 1px;
+    width: 28%;  
 }
+
+h1 {
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    color:rgba(175, 47, 47, 0.15);
+}
+
+.center{
+    align-content: center;
+}
+
+.diez{
+  width: 10%  
+}
+
+.left5{
+    margin-left:5px;
+}
+
+.left34{
+    margin-left:5px;
+}
+
+.ochenta{
+    width:77.5%
+  }
+
+

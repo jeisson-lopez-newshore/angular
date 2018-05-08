@@ -34,14 +34,16 @@ export class AppComponent {
 
    public onCreateTask(event: KeyboardEvent) {
 
-     let inpt: any;
-     inpt = event.currentTarget as HTMLInputElement;
+      let inpt: any;
+      inpt = event.currentTarget as HTMLInputElement;
 
-    let tsk1: Task;
-    tsk1 = new Task(this.tasks.length, inpt.value);
-    this.tasksData.push(tsk1);
-    this.tasks = this.tasksData;
-    inpt.value = '';
+      if(inpt.value != '') {
+        let tsk1: Task;
+        tsk1 = new Task(this.tasks.length, inpt.value);
+        this.tasksData.push(tsk1);
+        this.tasks = this.tasksData;
+        inpt.value = '';
+      }
    }
 
 

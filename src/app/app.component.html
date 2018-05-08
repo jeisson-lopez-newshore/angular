@@ -1,24 +1,24 @@
-<!--<div>{{tsk.getTaskId()}}, {{tsk.getTaskTxt()}}, {{tsk.isTaskSelected()}} </div>-->
+<div><h1>todos</h1></div>
 
-<div>
-    <input type="checkbox" (change)="onSelectAllItems($event)">
+<div class="center">
+    <input type="checkbox" (change)="onSelectAllItems($event)" class = "diez">
     <input type="text"
             placeholder="{{defaultTaskText}}"  
             (keyup.enter)="onCreateTask($event)"
-            (click)="onTxtEdit($event)">
+            (click)="onTxtEdit($event)" class="ochenta">
 </div>
 
 <div *ngFor="let item of tasks">
     <input type="checkbox" [checked]="item.isTaskSelected()" 
-    (change)=onSelectItem($event,item)>
+    (change)=onSelectItem($event,item) class = "diez">
     <input type="text"
-            value="{{item.getTaskTxt()}}">
+            value="{{item.getTaskTxt()}}" class="ochenta">
     <input type="button" value="X" (click)="onDeleteTasks(item)">
 </div>
 
 <div *ngIf="tasksData.length > 0">
-        <span>{{tasksData.length}} items left</span>
-        <input type="button" value="All" (click)="onGetAllTasks()">
+        <span class = "left5">{{tasksData.length}} items left</span>
+        <input type="button" value="All" (click)="onGetAllTasks()" class = "left34">
         <input type="button" value="Active" (click)="onGetAllActiveTasks()">
         <input type="button" value="Completed" (click)="onGetAllCompleteTasks()">
         <span *ngIf="tasks.length > 0 && counterSelection > 0">
