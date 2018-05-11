@@ -14,7 +14,7 @@ export class CommentsComponent implements OnInit {
   dataObs$: Observable<Comment[]>;
 
   constructor(service: ResourceService) {
-    this.dataObs$ = service.getResource<Comment>(this.url, 'component');
+    this.dataObs$ = service.getResource<Comment>(this.url, 'body');
     console.log(this.dataObs$);
   }
 

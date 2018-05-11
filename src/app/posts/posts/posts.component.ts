@@ -14,8 +14,7 @@ export class PostsComponent implements OnInit {
   dataObs$: Observable<Post[]>;
 
   constructor(service: ResourceService) {
-    this.dataObs$ = service.getResource<Post>(this.url, 'component');
-    console.log(this.dataObs$);
+    this.dataObs$ = service.getResource<Post>(this.url, 'title');
   }
 
   ngOnInit() {

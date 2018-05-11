@@ -10,7 +10,7 @@ export class ResourceService {
   constructor(private httpClient: HttpClient) { }
 
   public getResource<T>(url: string, parameter: string): Observable<T[]> {
-    return this.httpClient.get<T[]>(url).pipe(
+    return this.httpClient.get(url).pipe(
       map((collection: T[]) => {
       return collection.map(data => data[parameter]);
     }),

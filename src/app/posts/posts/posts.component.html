@@ -1,6 +1,8 @@
-<app-card  *ngIf = "dataObs$ | async as post">
-    <div>
-        "post"
-    </div>
-</app-card>
+<!--<app-card  *ngIf = "dataObs$ | async as post">
+        {{dataObs$}}
+</app-card>-->
+
+<div *ngIf = "dataObs$ | async as post">
+        <pre>{{post | json}}</pre>
+</div>
 
