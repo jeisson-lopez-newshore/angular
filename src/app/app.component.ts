@@ -9,5 +9,5 @@ export class AppComponent {
 	title = 'My application';
 	author = 'Jeisson López';
 	count = 0;
-	imageSource = './../favicon.ico'
+	imageSource = './../assets/img/kenshin.jpg';
 }
