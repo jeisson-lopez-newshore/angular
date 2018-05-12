@@ -1,8 +1,6 @@
-<!--<app-card  *ngIf = "dataObs$ | async as post">
-        {{dataObs$}}
-</app-card>-->
+<div *ngIf="dataObs$ | async as posts">
+    <h1>My Posts</h1>
+    <app-card *ngFor="let post of posts "
+              [data]="post"></app-card>
 
-<div *ngIf = "dataObs$ | async as post">
-        <pre>{{post | json}}</pre>
 </div>
-

@@ -1,2 +1,6 @@
-<app-card>  comments works!</app-card>
+<div *ngIf="dataObs$ | async as comments">
+    <h1>My Commens</h1>
+    <app-card *ngFor="let comment of comments "
+              [data]="comment"></app-card>
 
+</div>
