@@ -9,7 +9,7 @@ import { Post } from '../../entities/Post.interface';
 	styleUrls: [ './posts.component.scss' ]
 })
 export class PostsComponent implements OnInit {
-	url = 'http://jsonplaceholder.typicode.com/posts';
+	url = 'https://jsonplaceholder.typicode.com/posts';
 	dataObs$: Observable<Post[]>;
 
 	constructor(service: ResourceService) {

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 	styleUrls: [ './comments.component.scss' ]
 })
 export class CommentsComponent implements OnInit {
-	url = 'http://jsonplaceholder.typicode.com/comments';
+	url = 'https://jsonplaceholder.typicode.com/comments';
 	dataObs$: Observable<Comment[]>;
 	@Input() data: string;
 
