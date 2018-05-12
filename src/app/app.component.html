@@ -1,1 +1,8 @@
-<div>it works!</div>
+<app-my-component>
+</app-my-component>
+<div><img [src]="imageSource"></div>
+<div>
+    <button (click)=" count = count + 1">Enable</button> {{count}}
+    <input [disabled]="count%2 == 0 ? true : false">
+
+</div>
