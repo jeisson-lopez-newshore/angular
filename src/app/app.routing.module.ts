@@ -1,21 +1,17 @@
+import { TransfersComponent } from './transfers/transfers.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { UsersComponent } from './users/users.component';
-
 const routes: Routes = [
-    {path: '', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'users', component: UsersComponent }
+	{ path: '', component: TransfersComponent },
+	{
+		path: 'authentication',
+		loadChildren: './authentication/authentication.module#AuthenticationModule'
+	}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  declarations: [LoginComponent, UsersComponent, HomeComponent]
+	imports: [ RouterModule.forChild(routes) ],
+	exports: [ RouterModule ]
 })
-export class RoutinRoutingModule { }
-
+export class AppRoutingModule {}

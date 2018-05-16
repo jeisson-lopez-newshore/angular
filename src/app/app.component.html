@@ -1,4 +1,36 @@
-<a routerLink = "">login</a>
-<a routerLink = "home">home</a>
-<a routerLink = "users">users</a>
+<h2>Login</h2>
+<div>
+    User:
+    <input type="text"
+           class="userInput"
+           (change)="getUserName($event)">
+
+</div>
+<div>
+    Password: <input type="password"
+           (change)="getUserPassword($event)">
+</div>
+<div>
+    <input type="button"
+           value="Sign in"
+           class="button"
+           (click)="authenticateUser($event)"
+           [disabled]="!signInEnable">
+
+    <input type="button"
+           value="Sign out"
+           (click)="logOutUser()"
+           [disabled]="signInEnable">
+
+</div>
+
+<!--
+<a routerLink="
+           ">login</a>
+<a routerLink="home
+           ">home</a>
+<a routerLink="users
+           ">users</a>
+-->
+
 <router-outlet></router-outlet>
